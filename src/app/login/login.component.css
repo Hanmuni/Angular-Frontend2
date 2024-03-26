@@ -1,0 +1,56 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  border: 0.25rem solid rgb(255, 20, 147);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.margin-bottom {
+  margin-bottom: 2rem;
+}
+
+input {
+  width: 20vw;
+  height: 5vh;
+  background: transparent;
+  border: none;
+  outline: rgb(255, 20, 147) solid 0.25rem;
+  text-align: center;
+
+  &::placeholder {
+    color: rgb(255, 20, 147);
+  }
+
+  &:focus {
+    background-color: rgba(255, 20, 147);
+  }
+
+  &:focus::placeholder {
+    color: rgb(255, 255, 255);
+  }
+
+}
+
+button {
+  border: 0.25rem solid rgb(255, 20, 147);
+  background-color: transparent;
+  color: rgb(255, 20, 147);
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(255, 20, 147, 0.5);
+    color: rgb(255, 255, 255);
+  }
+}
