@@ -21,5 +21,4 @@ export class TodoComponent {
     this.router.navigate([`/edit/${id}`]);
   }
 
-  protected readonly ToDo = ToDo;
 }

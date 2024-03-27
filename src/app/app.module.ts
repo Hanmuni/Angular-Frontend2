@@ -9,7 +9,6 @@ import {TodoComponent} from "./todo/todo.component";
 import {LoginComponent} from "./login/login.component";
 import {ImprintComponent} from "./imprint/imprint.component";
 import {DataProtectionComponent} from "./data-protection/data-protection.component";
-import {DashboardComponent} from "./dashboard/dashboard.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { EditComponent } from './edit/edit.component';
 import { AddComponent } from './add/add.component';
@@ -24,7 +23,6 @@ import { AddComponent } from './add/add.component';
     LoginComponent,
     ImprintComponent,
     DataProtectionComponent,
-    DashboardComponent,
     EditComponent,
     AddComponent,
   ],
