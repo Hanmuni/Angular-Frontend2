@@ -3,6 +3,11 @@
 <p><b>Author: </b> <span> {{ toDo.author }} </span></p>
 <p><b>Id: </b> <span> {{ toDo.id }} </span></p>
 <p><b>Task: </b> <span> {{ toDo.todo }} </span> <input type="checkbox" [(ngModel)]="toDo.completed"></p>
+<div>
+  <button (click)="toDoService.removeToDo(toDo)"><img src="assets/img/trash.png"></button>
+  <button (click)="update(toDo.id)"><img src="assets/img/edit.png"></button>
+</div>
+
 
 
 

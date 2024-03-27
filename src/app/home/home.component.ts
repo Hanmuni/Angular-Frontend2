@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {todos} from "../../mock/ToDoList";
+import {ToDo} from "../../entity/ToDo";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,8 @@ import {todos} from "../../mock/ToDoList";
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  todos: ToDo[] = todos;
+  constructor(private router: Router) {
+  }
 
-  protected readonly todos = todos;
 }
