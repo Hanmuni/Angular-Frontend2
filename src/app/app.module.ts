@@ -12,6 +12,7 @@ import {DataProtectionComponent} from "./data-protection/data-protection.compone
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { EditComponent } from './edit/edit.component';
 import { AddComponent } from './add/add.component';
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { AddComponent } from './add/add.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

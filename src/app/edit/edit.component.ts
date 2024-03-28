@@ -19,11 +19,15 @@ export class EditComponent implements OnInit {
 
   ngOnInit() {
     let id: number = Number(this.route.snapshot.paramMap.get("id"));
-    this.toDo = this.toDoService.getToDoById(id)!;
+    this.toDoService.getToDoById(id).subscribe(response => {
+      this.toDo = response;
+    });
   }
 
   update(toDo: ToDo) {
-    this.toDoService.updateToDo(toDo);
-    this.router.navigate(['/']);
+    this.toDoService.updateToDo(toDo).subscribe(response => {
+      this.router.navigate(['/']);
+    })
+
   }
 }

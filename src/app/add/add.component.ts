@@ -9,13 +9,15 @@ import {Router} from "@angular/router";
   styleUrl: './add.component.css',
 })
 export class AddComponent {
-  toDo: ToDo = {id: 0, author: '', todo: '', completed: false};
+  toDo: ToDo = {id: 0, author: '', toDo: '', completed: false};
 
   constructor(private toDoService: TodoService, private router: Router) {
   }
 
   add(toDo: ToDo) {
-    this.toDoService.createToDo(toDo);
-    this.router.navigate(['/']);
+    this.toDoService.createToDo(toDo).subscribe(response => {
+      this.router.navigate(['/']);
+    });
+
   }
 }

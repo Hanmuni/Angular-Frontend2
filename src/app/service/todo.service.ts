@@ -1,39 +1,35 @@
 import {Injectable} from '@angular/core';
 import {ToDo} from "../../entity/ToDo";
-import {todos} from "../../mock/ToDoList";
-import {Router} from "@angular/router";
+import {ApiService} from "./api.service";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
-  private todos: ToDo[] = todos;
 
-
-  constructor() {
+  constructor(private apiService: ApiService) {
   }
 
-  public createToDo(toDo: ToDo): void {
-    todos.push(toDo);
+  public createToDo(toDo: ToDo): Observable<ToDo> {
+    return this.apiService.createToDo(toDo);
   }
 
-  public removeToDo(todo: ToDo): void {
-    this.todos.splice(this.todos.indexOf(todo), 1);
+  public removeToDo(toDo: ToDo): Observable<ToDo> {
+    return this.apiService.removeToDo(toDo);
   }
 
-  public updateToDo(updatedToDo: ToDo): void {
-    let todo = this.todos.find(element => element.id === updatedToDo.id)!;
-    let index = this.todos.indexOf(todo);
-    this.todos[index] = updatedToDo;
+  public updateToDo(updatedToDo: ToDo): Observable<ToDo> {
+  return this.apiService.updateToDo(updatedToDo);
   }
 
 
-  public getAllToDos(): ToDo[] {
-    return todos;
+  public getAllToDos(): Observable<ToDo[]> {
+    return this.apiService.getToDos();
   }
 
-  public getToDoById(id: number): ToDo | undefined {
-    return todos.find((toDo: ToDo) => toDo.id === id);
+  public getToDoById(id: number): Observable<ToDo> {
+    return this.apiService.getToDoById(id);
   }
 
 }
